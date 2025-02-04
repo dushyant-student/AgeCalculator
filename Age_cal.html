@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="Age_cal.css">
+
+</head>
+
+<body>
+
+    <div id="main1">
+        <h1 style="text-align:center;display:inline-block;">AGE CALCULATER</h1>
+        <div id="head">
+
+            <input id="yer" type="number" min="1800" max="3000" autofocus placeholder="Year"
+                style="text-align: center ;">
+            <input id="mont" type="number" min="1" max="12" autofocus placeholder="month" required
+                style="text-align: center ;">
+            <input id="day" type="number" min="1" max="31" autofocus placeholder="day" required
+                style="text-align: center ;">
+
+        </div>
+
+        <div id="dis">
+
+            <input id="tx" type="text" readonly  placeholder="This Shows only result">
+            <button id="btn" onclick="age_cal()">CALCULATE</button>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="./Age_cal.js"></script>
+<!-- <script type="text/javascript">
+    
+    
+
+    function age_cal() {
+        
+        //Enter age
+        var yr = parseInt(document.getElementById("yer").value)
+        var mont = parseInt(document.getElementById("mont").value);
+        var dy = parseInt(document.getElementById("day").value);
+
+        if ((yr && mont && dy) !== "") {
+            const dt = new Date;
+            const c_yr = dt.getFullYear();
+            const c_mon = dt.getMonth();
+            const c_day = dt.getDate();
+            const n_years = c_yr - yr
+            const n_months =  ((12-mont)+(c_mon+1))
+            const n_days = (Math.abs(30-dy)+c_day+1)
+            
+            console.log("n_days:-",c_day+1+Math.abs(30-dy))
+            if (n_days>=30){
+                    var update_months=((12-mont)+c_mon+1)
+                    const update_days=Math.abs(30-n_days)
+                    if (update_months>12){
+                        
+                    var res="answer3 "+t_years(yr,c_yr)+"years "+Math.abs(12-update_months)+"months "+update_days+"days "
+                    }
+                    else{
+                        var res = "answer4 "+t_years(yr,c_yr)+"years "+update_months+"months "+update_days+"days "
+                    }
+                    
+                    /*
+                    /*const dob = new Date(yr, mont, dy)
+                    console.log({dob})
+                    //current days
+                    const ans = dt - dob
+                    console.log(ans)
+                    const n_updateday=update_months+(30-n_days)
+                    const n_updatemonths=2-n_months*/
+            
+                /*const days = Math.abs(dy - c_day)
+                let months = (parseInt(12 - mont) + parseInt(c_mon + 1));
+                
+                if (c_yr == yr) {
+                    months = (c_mon - mont) + 1
+                }
+                if (c_mon == mont - 1) {
+                    months = 0
+                }
+                console.log(months, mont, c_mon)
+                let years = c_yr - yr
+                if (mont > c_mon) {
+                    years -= 1
+                }
+                if (mont < c_mon) {
+                    months -= 12
+                }
+                
+                
+                console.log({days, months, years})*/
+                /*#abdul
+                
+                let dayDiff;
+                let monthDiff;
+                
+                if (c_day < dy) {
+                    mont = mont - 1
+                    dayDiff = (30 - (dy) + (c_day))
+                } else {
+                    dayDiff = c_day - dy
+                }
+                
+                if (c_mon + 1 < mont) {
+                    yr = c_yr - 1
+                    monthDiff = (12 - mont) + c_mon + 1
+                } else {
+                    
+                    monthDiff = c_mon - mont + 1
+                }
+                
+                let yearDiff = c_yr - yr
+                
+                if (c_yr == yr + 1) {
+                    if (c_mon > mont) {
+                        yearDiff = 0
+                    }
+                }
+                
+                console.log({dayDiff, monthDiff, yearDiff})
+                */
+                
+                //var res = + (n_years)+"Years "+update_months+ "Month: "+ update_days + "Day" ;
+                //console.log(res);
+                document.getElementById("tx").value = res;
+                document.getElementById("tx").style.textAlign = "center"
+                document.getElementById("tx").style.backgroundColor = "palegreen"
+            }
+            else if(n_days<30) {
+                var res=t_years(yr,c_yr)+"years "+((12-mont)+c_mon )+"months "+ n_days+"days ";
+
+                console.log("answer5 " ,res)
+            }
+            else {
+                document.getElementById("tx").value = "PLEASE! ENTER TRUE AGE";
+                document.getElementById("tx").style.color = "red";
+                document.getElementById("tx").style.textAlign = "center";
+            }
+
+        function t_years(yr,c_yr){
+            if (update_months=12){
+                update_months = 0
+                const n_years = c_yr - yr
+                return (1) 
+                
+            }
+            else if (yr==(c_yr-1)){
+                return (0)
+                
+            }
+            else{
+                
+                return (parseInt(n_years-1))
+            }
+        }
+        t_years(yr,c_yr)
+        
+    }
+
+    }
+    
+
+
+</script> -->
+
+</html>
